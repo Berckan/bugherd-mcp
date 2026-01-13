@@ -1,0 +1,10 @@
+src/
+tsconfig.json
+bun.lock
+.git/
+.github/
+*.test.ts
+coverage/
+.env
+.env.local
+.cursor/
