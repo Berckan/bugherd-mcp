@@ -2,7 +2,7 @@
   "name": "bugherd-mcp",
   "version": "0.2.0",
   "mcpName": "io.github.Berckan/bugherd-mcp",
-  "description": "MCP server for BugHerd integration - manage bugs and feedback from Claude",
+  "description": "MCP server for BugHerd integration - manage bugs and feedback from AI assistants",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -17,7 +17,7 @@
   "keywords": [
     "mcp",
     "bugherd",
-    "claude",
+    "ai",
     "bug-tracking",
     "feedback"
   ],

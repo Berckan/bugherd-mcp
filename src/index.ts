@@ -3,7 +3,7 @@
  * BugHerd MCP Server
  *
  * An MCP server that provides tools to interact with BugHerd's bug tracking API.
- * Enables Claude to list projects, view tasks, and read feedback from BugHerd.
+ * Enables AI assistants to list projects, view tasks, and read feedback from BugHerd.
  *
  * @author Berckan Guerrero <hi@berck.io>
  * @license MIT

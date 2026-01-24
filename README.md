@@ -1,6 +1,6 @@
 # BugHerd MCP Server
 
-An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that integrates [BugHerd](https://bugherd.com) bug tracking with AI assistants like Claude.
+An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that integrates [BugHerd](https://bugherd.com) bug tracking with AI assistants.
 
 ## Features
 
@@ -56,9 +56,9 @@ export BUGHERD_API_KEY=your-api-key-here
 
 ## Configuration
 
-### Claude Code
+### CLI Configuration
 
-Add to your `~/.claude.json`:
+Add to your MCP client config:
 
 ```json
 {
@@ -75,9 +75,9 @@ Add to your `~/.claude.json`:
 }
 ```
 
-### Claude Desktop
+### Desktop Apps
 
-Add to your Claude Desktop config:
+Add to your MCP desktop app config:
 
 ```json
 {
