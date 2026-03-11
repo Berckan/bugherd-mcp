@@ -1360,16 +1360,26 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const status = await getStatusNameForProject(parsed.project_id, task.status_id);
         const priority = getPriorityName(task.priority_id);
         const tags = task.tag_names.length > 0 ? task.tag_names.join(", ") : "none";
-        const pageUrl = task.selector_info?.url || task.site?.url || task.url || "Not available";
-        const selector = task.selector_info?.selector || "Not available";
-        const clientInfo = task.client_info || {};
-        const os = clientInfo.operating_system || task.os || "Not available";
-        const browser = clientInfo.browser || task.browser || "Not available";
-        const resolution = clientInfo.resolution || task.resolution || "Not available";
-        const windowSize = clientInfo.browser_window_size || task.window_size || "Not available";
-        const colorDepth =
-          clientInfo.color_depth ||
-          (task.color_depth ? `${task.color_depth} bit` : "Not available");
+
+        const siteBase = task.site || "";
+        const pagePath = task.url || "";
+        const pageUrl = siteBase && pagePath ? `${siteBase}${pagePath}` : pagePath || siteBase || "Not available";
+        const selector = task.selector_info?.path || "Not available";
+
+        const os = task.requester_os || "Not available";
+        const browser = task.requester_browser || "Not available";
+        const resolution = task.requester_resolution || "Not available";
+        const windowSize = task.requester_browser_size || "Not available";
+
+        const screenshotUrl = task.screenshot_url || "No screenshot available";
+        const sd = task.screenshot_data;
+        const screenshotSize = sd?.screenshot_width && sd?.screenshot_height
+          ? `${sd.screenshot_width} x ${sd.screenshot_height} px`
+          : "Not available";
+        const viewport = sd?.screenshot_width
+          ? (sd.screenshot_width < 768 ? "Mobile" : "Desktop")
+          : "Unknown";
+
         const output = `## Task #${task.local_task_id}
 
 **Status:** ${status}
@@ -1384,10 +1394,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 ${task.description}
 
 ### Screenshot
-${task.screenshot ?? "No screenshot available"}
+${screenshotUrl}
 
-### Page URL
-${pageUrl}
+### Page Info
+- **URL:** ${pageUrl}
+- **Viewport:** ${viewport}
+- **Screenshot Size:** ${screenshotSize}
 
 ### Element Selector
 \`${selector}\`
@@ -1399,7 +1411,6 @@ ${pageUrl}
 | Browser | ${browser} |
 | Resolution | ${resolution} |
 | Browser Window | ${windowSize} |
-| Color Depth | ${colorDepth} |
 
 ### Links
 - [View in BugHerd](${task.admin_link})`;

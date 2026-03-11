@@ -89,6 +89,23 @@ export type BugherdTaskPriority =
   | "normal"
   | "minor";
 
+export interface BugherdSelectorInfo {
+  path?: string;
+  html?: string;
+  version?: number;
+  data?: {
+    bugOffsetX?: number;
+    bugOffsetY?: number;
+  };
+}
+
+export interface BugherdScreenshotData {
+  screenshot_width?: number;
+  screenshot_height?: number;
+  screenshot_pin_x?: number;
+  screenshot_pin_y?: number;
+}
+
 export interface BugherdTask {
   id: number;
   local_task_id: number;
@@ -103,29 +120,25 @@ export interface BugherdTask {
   assigned_to_id: number | null;
   tag_names: string[];
   admin_link: string;
-  screenshot: string | null;
-  selector_info: {
-    selector: string;
-    url: string;
-  } | null;
-  // Browser/environment metadata (captured when bug was reported)
-  site?: {
-    url?: string;
-  };
-  client_info?: {
-    operating_system?: string;
-    browser?: string;
-    resolution?: string;
-    browser_window_size?: string;
-    color_depth?: string;
-  };
-  // Alternative field names (BugHerd API may use different names)
+  secret_link?: string;
+
+  // Screenshot
+  screenshot_url: string | null;
+  screenshot_data?: BugherdScreenshotData;
+
+  // Page context
+  site?: string;
   url?: string;
-  os?: string;
-  browser?: string;
-  resolution?: string;
-  window_size?: string;
-  color_depth?: number | string;
+
+  // Element selector (CSS path + HTML snippet)
+  selector_info?: BugherdSelectorInfo | null;
+
+  // Browser/environment metadata
+  requester_os?: string;
+  requester_browser?: string;
+  requester_browser_size?: string;
+  requester_resolution?: string;
+
   // Computed fields
   status?: BugherdTaskStatus;
   priority?: BugherdTaskPriority;
