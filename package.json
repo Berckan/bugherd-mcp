@@ -1,6 +1,6 @@
 {
   "name": "bugherd-mcp",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "mcpName": "io.github.Berckan/bugherd-mcp",
   "description": "MCP server for BugHerd integration - manage bugs and feedback from AI assistants",
   "type": "module",
@@ -14,7 +14,20 @@
     "dev:http": "PORT=3003 bun run src/index.ts",
     "start": "node dist/index.js",
     "start:http": "PORT=3003 node dist/index.js",
-    "inspector": "npx @modelcontextprotocol/inspector bun run src/index.ts"
+    "inspector": "npx @modelcontextprotocol/inspector bun run src/index.ts",
+    "prepare": "husky",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.{json,css}": [
+      "biome format --write --no-errors-on-unmatched"
+    ]
   },
   "keywords": [
     "mcp",
@@ -30,12 +43,15 @@
     "url": "https://github.com/berckan/bugherd-mcp"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.2",
-    "zod": "^4.3.5"
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.5",
-    "@types/node": "^20.0.0",
+    "@biomejs/biome": "^2.4.7",
+    "@types/bun": "^1.3.10",
+    "@types/node": "^20.19.37",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "typescript": "^5.9.3"
   },
   "engines": {

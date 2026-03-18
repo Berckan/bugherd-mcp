@@ -75,19 +75,9 @@ export interface BugherdProjectResponse {
 // Task Types
 // ============================================================================
 
-export type BugherdTaskStatus =
-  | "backlog"
-  | "todo"
-  | "doing"
-  | "done"
-  | "closed";
+export type BugherdTaskStatus = "backlog" | "todo" | "doing" | "done" | "closed";
 
-export type BugherdTaskPriority =
-  | "not set"
-  | "critical"
-  | "important"
-  | "normal"
-  | "minor";
+export type BugherdTaskPriority = "not set" | "critical" | "important" | "normal" | "minor";
 
 export interface BugherdSelectorInfo {
   path?: string;
@@ -206,9 +196,7 @@ export function getStatusName(statusId: number): BugherdTaskStatus {
   return STATUS_MAP[statusId] ?? "backlog";
 }
 
-export function getPriorityName(
-  priorityId: number | null,
-): BugherdTaskPriority {
+export function getPriorityName(priorityId: number | null): BugherdTaskPriority {
   if (priorityId === null) return "not set";
   return PRIORITY_MAP[priorityId] ?? "not set";
 }

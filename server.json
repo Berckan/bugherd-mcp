@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Berckan/bugherd-mcp",
-  "description": "BugHerd bug tracking integration. List projects, tasks, comments with filtering.",
+  "description": "BugHerd API v2 integration — 37 tools for projects, tasks, comments, and webhooks.",
   "repository": {
     "url": "https://github.com/Berckan/bugherd-mcp",
     "source": "github"
   },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "bugherd-mcp",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       },
