@@ -15,6 +15,10 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that 
 - **Attachments** - Manage file attachments
 - **Webhooks** - Configure event notifications
 
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/berckan-bugherd-mcp).
+
 ## Installation
 
 ### Prerequisites
