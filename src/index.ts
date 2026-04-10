@@ -1363,7 +1363,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
         const siteBase = task.site || "";
         const pagePath = task.url || "";
-        const pageUrl = siteBase && pagePath ? `${siteBase}${pagePath}` : pagePath || siteBase || "Not available";
+        const pageUrl =
+          siteBase && pagePath ? `${siteBase}${pagePath}` : pagePath || siteBase || "Not available";
         const selector = task.selector_info?.path || "Not available";
 
         const os = task.requester_os || "Not available";
@@ -1373,11 +1374,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
         const screenshotUrl = task.screenshot_url || "No screenshot available";
         const sd = task.screenshot_data;
-        const screenshotSize = sd?.screenshot_width && sd?.screenshot_height
-          ? `${sd.screenshot_width} x ${sd.screenshot_height} px`
-          : "Not available";
+        const screenshotSize =
+          sd?.screenshot_width && sd?.screenshot_height
+            ? `${sd.screenshot_width} x ${sd.screenshot_height} px`
+            : "Not available";
         const viewport = sd?.screenshot_width
-          ? (sd.screenshot_width < 768 ? "Mobile" : "Desktop")
+          ? sd.screenshot_width < 768
+            ? "Mobile"
+            : "Desktop"
           : "Unknown";
 
         const output = `## Task #${task.local_task_id}
