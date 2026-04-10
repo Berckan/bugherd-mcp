@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "🔍 Pre-push: linting..."
+bun run lint || { echo "❌ Lint failed. Fix before pushing."; exit 1; }
+
+echo "🔍 Pre-push: typechecking..."
+bun run typecheck || { echo "❌ Typecheck failed. Fix before pushing."; exit 1; }
+
+echo "✅ Pre-push checks passed"
