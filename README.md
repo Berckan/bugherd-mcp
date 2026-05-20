@@ -1,5 +1,12 @@
 # BugHerd MCP Server
 
+> **🚨 Official BugHerd MCP now available**  
+> BugHerd maintains an [official BugHerd MCP server](https://support.bugherd.com/en/articles/14835206-getting-started-with-the-bugherd-mcp-server) that we recommend for improved performance and **user role-based access** — what each user can do via the MCP matches their role and permissions in BugHerd.
+>
+> [> Find out more here](https://support.bugherd.com/en/articles/14835206-getting-started-with-the-bugherd-mcp-server)
+>
+> This community project remains a useful option if you need self-hosted, API-key–based access with broad API v2 coverage. Thank you to [@berckan](https://github.com/berckan) for building and maintaining it.
+
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that integrates [BugHerd](https://bugherd.com) bug tracking with AI assistants.
 
 ## Features
