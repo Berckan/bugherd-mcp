@@ -126,17 +126,17 @@ Add to your MCP desktop app config:
 
 ### Tasks
 
-| Tool                           | Description                                     |
-| ------------------------------ | ----------------------------------------------- |
-| `bugherd_list_tasks`           | List tasks with filters (status, priority, tag) |
-| `bugherd_list_feedback_tasks`  | List unprocessed feedback tasks                 |
-| `bugherd_list_archived_tasks`  | List archived tasks                             |
-| `bugherd_list_taskboard_tasks` | List taskboard tasks                            |
-| `bugherd_get_task`             | Get task details with metadata                  |
-| `bugherd_get_task_global`      | Get task by global ID                           |
-| `bugherd_get_task_by_local_id` | Get task by local ID (#123)                     |
-| `bugherd_create_task`          | Create a new task                               |
-| `bugherd_move_tasks`           | Move tasks between projects                     |
+| Tool                           | Description                                      |
+| ------------------------------ | ------------------------------------------------ |
+| `bugherd_list_tasks`           | List tasks with filters (status, priority, tag)  |
+| `bugherd_list_feedback_tasks`  | List unprocessed feedback tasks                  |
+| `bugherd_list_archived_tasks`  | List archived tasks                              |
+| `bugherd_list_taskboard_tasks` | List taskboard tasks                             |
+| `bugherd_get_task`             | Get task details with metadata                   |
+| `bugherd_get_task_global`      | Get task by global ID                            |
+| `bugherd_get_task_by_local_id` | Get task by local ID (#123)                      |
+| `bugherd_create_task`          | Create a new task                                |
+| `bugherd_move_tasks`           | Move tasks between projects                      |
 | `bugherd_update_task`          | Update task status/priority/description/assignee |
 
 ### Columns
@@ -233,7 +233,7 @@ MIT
 
 ## Author
 
-[Berckan Guerrero](https://github.com/berckan) (hi@berck.io)
+[Berckan Guerrero](https://github.com/berckan)
 
 ## Contributing
 

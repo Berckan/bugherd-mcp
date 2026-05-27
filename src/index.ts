@@ -6,7 +6,7 @@
  * An MCP server that provides tools to interact with BugHerd's bug tracking API.
  * Enables AI assistants to list projects, view tasks, and read feedback from BugHerd.
  *
- * @author Berckan Guerrero <hi@berck.io>
+ * @author Berckan Guerrero
  * @license MIT
  */
 
