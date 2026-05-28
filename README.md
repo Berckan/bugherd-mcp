@@ -1,5 +1,7 @@
 # BugHerd MCP Server
 
+> **Note:** This is an unofficial, community-maintained, open-source (MIT) BugHerd MCP server. It runs locally, your data never leaves your machine. For BugHerd's official closed-source hosted server, see [macropodhq/bugherd-mcp](https://github.com/macropodhq/bugherd-mcp).
+
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that integrates [BugHerd](https://bugherd.com) bug tracking with AI assistants.
 
 ## Features
